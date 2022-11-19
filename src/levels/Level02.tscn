@@ -30,10 +30,10 @@ points = PoolVector2Array( 0, 0, 80, 0, 80, 80, 0, 80 )
 } ]
 0/z_index = 0
 
-[node name="LevelTemplate" type="Node2D"]
+[node name="Level02" type="Node2D"]
 __meta__ = {
 "_edit_horizontal_guides_": [ 1119.0 ],
-"_edit_vertical_guides_": [ 3600.0 ]
+"_edit_vertical_guides_": [ 3600.0, 1922.0 ]
 }
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -57,7 +57,7 @@ position = Vector2( 479, 983 )
 speed = Vector2( 800, 1400 )
 
 [node name="Camera2D" parent="Player" index="2"]
-limit_right = 3600
+limit_right = 1920
 limit_bottom = 1120
 
 [editable path="Player"]
