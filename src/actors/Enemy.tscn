@@ -39,4 +39,4 @@ monitorable = false
 position = Vector2( 0, -21 )
 shape = SubResource( 2 )
 
-[connection signal="body_entered" from="StompDetector" to="." method="_on_StompDetector_body_entered"]
+[connection signal="area_entered" from="StompDetector" to="." method="_on_StompDetector_area_entered"]

@@ -10,6 +10,7 @@ func _on_EnemyDetector_area_entered(area: Area2D) -> void:
 
 
 func _on_EnemyDetector_body_entered(body: Node) -> void:
+	die()
 	queue_free()
 	
 
@@ -50,5 +51,7 @@ func calculate_stomp_velocity(linear_velocity: Vector2, impulse: float) -> Vecto
 	return out
 
 
-
+func die() -> void:
+	PlayerData.deaths += 1
+	queue_free()
 

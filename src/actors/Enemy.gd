@@ -1,16 +1,14 @@
 extends Actor
 
 
+onready var stomp_detector = $StompDetector
+
+export var score := 100
+
+
 func _ready() -> void:
 	set_physics_process(false)
 	_velocity.x = -speed.x
-
-
-func _on_StompDetector_body_entered(body: Node) -> void:
-#	if body.global_position.y < $StompDetector.global_position.y:
-#		return
-	$StompDetector/CollisionShape2D.disabled = true
-	queue_free()
 
 
 func _physics_process(delta: float) -> void:
@@ -20,3 +18,12 @@ func _physics_process(delta: float) -> void:
 	_velocity.y = move_and_slide(_velocity, FLOOR_NORMAL).y
 
 
+func _on_StompDetector_area_entered(area: Area2D) -> void:
+	if area.global_position.y > stomp_detector.global_position.y:
+		return
+	die()
+
+
+func die() -> void:
+	queue_free()
+	PlayerData.score += score
